@@ -3,7 +3,7 @@
 App Android to load web pages inside a WebView in a simple way
 
 
-##How to use
+## How to use
 
 
 * Change the URL constant path in the mainActivity class:
