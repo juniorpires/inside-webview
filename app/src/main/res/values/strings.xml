@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InsideWebView</string>
+    <string name="msg_network_error">Verifique sua conexão</string>
+    <string name="bt_update_network">ATUALIZAR</string>
+</resources>
