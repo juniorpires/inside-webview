@@ -19,7 +19,7 @@ import tools.AndroidUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String URL = "https://suporte.pointmaquinetas.com.br";
+    public static final String URL = "http://suporte.pointmaquinetas.com.br";
 
     View view;
 
@@ -111,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    public String getContent(){ return barcode; }
+    public void  cleanContent(){ barcode = null; }
+
     public class JavaScriptInterface {
         Context mContext;
 
@@ -129,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent("com.google.zxing.client.android.SCAN");
             intent.setPackage("com.google.zxing.client.android");
             startActivityForResult(intent, 0);
+        }
+
+        @JavascriptInterface
+        public String getScanResult() {
+            String content = getContent();
+            cleanContent();
+            return content;
         }
     }   //JavascriptInterface
 }
